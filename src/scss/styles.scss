@@ -1,0 +1,466 @@
+@import url("../scss/custom/fonts.scss");
+
+// Configuration
+@import "bootstrap/scss/functions";
+
+@import "../scss/custom/variables";
+@import "../scss/custom/helpers";
+
+$theme-colors: map-remove($theme-colors, "teal", "pink", "indigo", "purple", "orange", "cyan");
+
+@debug $theme-colors;
+
+@import "bootstrap/scss/variables";
+
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+// Layout & components
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/button-group";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/accordion";
+@import "bootstrap/scss/breadcrumb";
+@import "bootstrap/scss/pagination";
+@import "bootstrap/scss/badge";
+@import "bootstrap/scss/alert";
+@import "bootstrap/scss/progress";
+@import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+@import "bootstrap/scss/toasts";
+@import "bootstrap/scss/modal";
+@import "bootstrap/scss/tooltip";
+@import "bootstrap/scss/popover";
+@import "bootstrap/scss/carousel";
+@import "bootstrap/scss/spinners";
+@import "bootstrap/scss/offcanvas";
+@import "bootstrap/scss/placeholders";
+
+// Helpers
+@import "bootstrap/scss/helpers";
+
+// Utilities
+@import "bootstrap/scss/utilities/api";
+
+hr {
+  margin: 0;
+  border-top: 1px #7d7d7d solid;
+  opacity: 1;
+}
+
+b,
+strong {
+  font-weight: inherit;
+}
+
+header {
+  transition: $transition-duration;
+}
+
+header.scrolled {
+  background-color: hsla(228, 24%, 6%, 0.2);
+  backdrop-filter: blur(16px);
+}
+
+@media (max-width: 576px) {
+  .navbar-brand  {
+    max-width: 200px;
+  }
+}
+
+.navbar-brand {
+}
+
+address {
+  margin: 0;
+}
+
+.navbar-toggler-icon {
+  background-image: $navbar-toggler-icon-bg;
+}
+
+.dropdown {
+  margin: auto 0;
+}
+
+.dropdown-menu[data-bs-popper] {
+  top: 26px;
+  left: 20%;
+  margin-top: inherit;
+}
+
+@media (min-width: 992px) {
+  .dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    top: 22px;
+    left: 20%;
+  }
+}
+
+.dropdown-toggle {
+  font-size: $nav-link-font-size;
+}
+
+.nav-link,
+.dropdown-toggle {
+  display: inline;
+}
+
+.dropdown .dropdown-toggle,
+.nav-item:not(:last-child) a {
+  &::after {
+    content: url("./img/totch.svg");
+    position: absolute;
+    top: calc(50% - 3px);
+    transform: translate(0, -50%);
+    width: 6px;
+    border: none;
+    margin-left: calc(1.5em - 6px);
+    transition: $transition-duration;
+  }
+
+  @include hover-or-active {
+    &::after {
+      content: url("./img/arrow.svg");
+      width: 10px;
+      top: 50%;
+      margin-left: calc(1.5em - 10px);
+    }
+  }
+}
+
+.dropdown:hover > .dropdown-toggle::after,
+.dropdown-menu.show + .dropdown-toggle::after,
+.dropdown .dropdown-toggle:focus-visible::after,
+.nav-item:not(:last-child):focus-visible::after a {
+  content: url("./img/arrow.svg");
+  width: 10px;
+  top: 50%;
+  margin-left: calc(1.5em - 10px);
+}
+
+.dropdown:focus-within,
+.nav-item:focus-within {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
+.dropdown .dropdown-toggle:focus-visible,
+.nav-item .nav-link:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.dropdown-toggle:hover {
+  color: inherit;
+}
+
+.offcanvas.show {
+  .nav-item {
+    margin-left: 0.25em !important;
+  }
+
+  .dropdown {
+    outline: none;
+  }
+}
+.dropdown-item:hover,
+.dropdown-item:focus {
+  text-decoration: underline;
+}
+
+.top-bar .btn,
+.call-icon,
+.dropdown-item,
+.cost-calculation,
+.phone-number,
+.mailto,
+.dropdown,
+.working-hours,
+.city {
+  font-size: $nav-link-font-size;
+  color: $light-mute;
+
+  transition: $transition-duration;
+
+  @include hover-or-active {
+    color: $light;
+  }
+}
+
+.dropdown-item {
+  @include hover-or-active {
+    color: $dark-mute;
+  }
+}
+
+.city,
+.working-hours,
+.call-icon,
+.cost-calculation,
+.phone-number,
+.mailto {
+  position: relative;
+  padding-left: 34px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.city {
+  &::after {
+    content: url("./img/icons/location.svg");
+  }
+}
+
+.working-hours {
+  &::after {
+    content: url("./img/icons/clock.svg");
+  }
+}
+
+.call-icon {
+  &::after {
+    content: url("./img/icons/callback.svg");
+  }
+}
+
+.cost-calculation {
+  &::after {
+    content: url("./img/icons/calculator.svg");
+  }
+}
+
+.phone-number {
+  &::after {
+    content: url("./img/icons/mobile-phone.svg");
+  }
+}
+
+.mailto {
+  &::after {
+    content: url("./img/icons/email.svg");
+  }
+}
+
+.hero {
+  @include background-image-retina("./img/bg/home.png", "./img/bg/home@2x.png");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  min-height: 100vh;
+}
+
+.breadcrumb {
+  font-family: $ff-Gilroy;
+}
+
+.breadcrumb-item img {
+  display: block;
+  height: 100%;
+}
+
+.image-bg,
+.image-bg::before,
+.image-bg::after {
+  background-image: url("./img/totch.svg");
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+  height: 14px;
+}
+
+.image-bg {
+  position: relative;
+  background-position: center;
+  width: 100%;
+}
+
+.image-bg::before,
+.image-bg::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+}
+
+.image-bg::before {
+  top: 0;
+  left: calc(50% - 24px);
+}
+
+.image-bg::after {
+  top: 0;
+  left: calc(50% + 10px);
+}
+
+.nav-pills .nav-item {
+  padding: 0 2px;
+}
+
+.nav-pills .nav-item:not(:last-child) {
+  margin-inline-end: 10px;
+}
+
+.nav-pills .nav-item:not(:first-child) {
+  margin-inline-start: 10px;
+}
+
+.nav-pills .nav-link {
+  padding-left: 24px;
+  padding-right: 0;
+}
+
+.nav-pills .nav-link {
+  font-family: $ff-HelveticaNeueCyr;
+  font-weight: 600;
+  font-size: 14px;
+  color: inherit;
+}
+.nav-pills .nav-link span {
+  font-weight: 500;
+}
+
+.nav-pills .nav-link {
+  position: relative;
+
+  &::before {
+    content: "";
+    outline: 1px solid #d9d9d9;
+    border: 1px solid transparent;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.nav-pills .nav-link.active {
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: red;
+    top: 50%;
+    left: 2px;
+    transform: translate(0, -50%);
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.nav-link {
+  transition: $transition-duration;
+}
+
+.card-title,
+.card-text {
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-inner {
+  border-radius: 10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 0;
+  transition: $transition-duration;
+}
+
+.card:hover .carousel-control-prev,
+.card:hover .carousel-control-next {
+  opacity: 1;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("./img/icons/arrow-left.svg");
+}
+
+.carousel-control-next-icon {
+  background-image: url("./img/icons/arrow-right.svg");
+}
+
+.modal-content {
+  border-radius: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+.btn-close {
+  background-size: 30px 30px;
+  border-radius: 0;
+  padding: 0.5rem;
+}
+
+.footer {
+  color: $light-mute;
+
+  @include background-image-retina("./img/bg/footer.png", "./img/bg/footer@2x.png");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 1400px) {
+  .footer .phone-number {
+    margin-right: 1rem !important;
+  }
+}
+
+@media (max-width: 769px) {
+  .footer .navbar-brand {
+    margin-bottom: 1rem !important;
+    margin-left: 3rem !important;
+    padding: 0;
+  }
+
+  .footer .navbar-nav .nav-item,
+  .footer .navbar-nav .dropdown {
+    margin: 0 !important;
+    margin-bottom: 0.5rem !important;
+    margin-left: 3rem !important;
+  }
+
+  .footer .phone-number {
+    margin-left: 3rem !important;
+  }
+
+  .footer .mailto,
+  .footer .city {
+    padding-block: $btn-padding-y;
+  }
+
+  .footer .working-hours,
+  .footer .mailto,
+  .footer .city,
+  .footer .call-icon,
+  .footer .cost-calculation {
+    margin-inline: 3rem !important;
+  }
+}

@@ -1,0 +1,125 @@
+// ---------------------------------- COLORS ----------------------------------- //
+
+$primary: #2a6478;
+$secondary: #ff5147;
+$light: #ffffff;
+$light-mute: #c8c8c8;
+$dark: #000000;
+$dark-mute: #323232;
+
+// ----------------------------------- CUSTOM COLORS ----------------------------------- //
+
+$custom-colors: (
+    "cc-card-text": #e1e1e1
+);
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "light": $light,
+    "dark": $dark,
+    "dark-mute": $dark-mute,
+    "light-mute": $light-mute
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// ----------------------------------- FONT SIZE ----------------------------------- //
+
+$h1-font-size: 3rem;
+
+// ----------------------------------- LINKS ----------------------------------- //
+
+$link-color: #c8c8c8;
+$link-hover-color: $dark-mute;
+
+// ----------------------------------- NAV LINK ----------------------------------- //
+
+$nav-link-padding-y: 0;
+$nav-link-font-weight: 400;
+
+// ----------------------------------- OFFCANVAS ----------------------------------- //
+
+$offcanvas-color: $light-mute;
+$offcanvas-bg-color: $dark-mute;
+$offcanvas-padding-x: 40px;
+$offcanvas-padding-y: 32px;
+
+// ----------------------------------- NAVBAR ----------------------------------- //
+
+$nav-link-font-size: 0.875rem;
+$navbar-nav-link-padding-x: 0;
+$navbar-light-color: $light-mute;
+$navbar-light-active-color: $secondary;
+$navbar-dark-color: $dark-mute;
+$navbar-dark-active-color: $secondary;
+$navbar-light-hover-color: $light;
+$navbar-dark-hover-color: $dark;
+$navbar-toggler-icon-bg: url('./img/icons/burger-menu.svg');
+$navbar-toggler-border-radius: 0;
+$border-width: 0;
+// ----------------------------------- NAV PILLS ----------------------------------- //
+
+$nav-pills-link-active-color: $dark-mute;
+$nav-pills-link-active-bg: transparent;
+$nav-pills-border-radius: 0;
+
+
+// ----------------------------------- CARD ----------------------------------- //
+
+$card-border-width: 0;
+$card-bg: transparent;
+$card-spacer-x: 30px;
+$card-spacer-y: 30px;
+$card-color: var(--bs-cc-card-text);
+
+// ----------------------------------- MAIN ----------------------------------- //
+
+$font-family-base: "Helvetica Neue", sans-serif;
+$body-line-height: 1.3;
+$body-bg: #ffffff;
+$transition-duration: 0.5s;
+
+// ----------------------------------- FONTS ----------------------------------- //
+
+$ff-HelveticaNeueCyr: "HelveticaNeueCyr", sans-serif;
+$ff-Gilroy: "Gilroy", sans-serif;
+
+// ----------------------------------- BOX SHADOW ----------------------------------- //
+
+$box-shadow: 0 0.25rem 0.25rem 0 rgba($dark, 0.2);
+$border-color: $dark;
+
+// ----------------------------------- FORM ----------------------------------- //
+
+$form-check-input-border: 2px solid rgba($secondary, 1);
+$input-border-color: $secondary;
+$input-border-radius: 30px;
+$form-check-input-checked-bg-color: $secondary;
+
+// ----------------------------------- BREADCRUMB ----------------------------------- //
+
+$breadcrumb-bg: transparent;
+$breadcrumb-divider-color: $dark-mute;
+$breadcrumb-active-color: $dark-mute;
+$breadcrumb-divider: "/";
+$breadcrumb-margin-bottom: 0;
+$breadcrumb-color: red;
+
+// ----------------------------------- BUTTONS ----------------------------------- //
+
+$btn-color: $light;
+$btn-bg: $secondary;
+$btn-border-radius: 5px;
+$btn-border-width: 0;
+$btn-padding-y: 0.8125rem;
+$btn-padding-x: 1.5625rem;
+$btn-secondary-color: #fff;
+$breadcrumb-padding-x: 0;
+$breadcrumb-padding-y: 12px;
+
+// ----------------------------------- MODAL ----------------------------------- //
+
+$btn-close-bg: url('./img/icons/close.svg');
+$btn-close-opacity: 1;
+$btn-close-focus-shadow: 0;
